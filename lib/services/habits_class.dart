@@ -54,7 +54,7 @@ class _classHabit extends State<classHabit> {
     return GestureDetector(
         onTap: reverse,
         child: DecoratedBox(
-            decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/gradient_full.jpg'), fit: BoxFit.none), borderRadius: BorderRadius.circular(17)),
+            decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/pic-back-2.png'), fit: BoxFit.none), borderRadius: BorderRadius.circular(10)),
             child: Column(
               children: [
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween),

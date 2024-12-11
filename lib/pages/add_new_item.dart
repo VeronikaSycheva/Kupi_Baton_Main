@@ -30,7 +30,7 @@ class _AddNewItemState extends State<AddNewItem> {
         appBar: AppBar(
           toolbarHeight: 100,
           title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               MyText(
                 text: 'New item',

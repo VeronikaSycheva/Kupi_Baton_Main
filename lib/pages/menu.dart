@@ -47,9 +47,9 @@ class Menu extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Grad(ButtonInMenu('Profile', '/prof', context),'assets/gradient1.jpg'),
+              Grad(ButtonInMenu('Profile', '/prof', context),'assets/pic-back-1.png'),
               Padding(padding: EdgeInsets.only(top: 40)),
-              Grad(ButtonInMenu('Shopping lists', '/hab', context),'assets/gradient2.jpg'),
+              Grad(ButtonInMenu('Shopping lists', '/hab', context),'assets/pic-back-1.png'),
               Padding(padding: EdgeInsets.only(top: 40)),
 
             ],

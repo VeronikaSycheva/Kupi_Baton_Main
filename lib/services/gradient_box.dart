@@ -8,7 +8,7 @@ DecoratedBox Grad(Widget widget, String backImage)
             image: AssetImage(backImage),
             fit: BoxFit.none
         ),
-        borderRadius: BorderRadius.circular(22)
+        borderRadius: BorderRadius.circular(10)
     ),
     child: widget,
   );

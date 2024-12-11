@@ -67,9 +67,9 @@ class _Profile extends State<Profile1>{
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image(image: AssetImage('assets/pencil.png'), width: 25, height: 25),
+                                Image(image: AssetImage('assets/pencil.png'), width: 30, height: 30),
                                 Padding(padding: EdgeInsets.only(right: 10)),
-                                Text('Change information', style: TextStyle(color: Colors.black, fontSize: 15, decoration: TextDecoration.underline),)
+                                Text('Change information', style: TextStyle(color: Colors.black, fontSize: 20, decoration: TextDecoration.underline),)
                               ],
                             ),
                             onPressed: () {

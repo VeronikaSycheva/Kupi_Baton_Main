@@ -12,7 +12,7 @@ class FirebaseLogin extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasError){
             return const Scaffold(
-                body: Center(child: Text('Что-то пошло не так!')));
+                body: Center(child: Text('Something wrong')));
           }
           else if (snapshot.hasData)
             return const Reg();
