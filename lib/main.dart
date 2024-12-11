@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:untitled/pages/list_ready_habit.dart';
 import 'package:untitled/pages/auth_page.dart';
 import 'package:untitled/services/notice.dart';
 import 'firebase_options.dart';
 import 'package:untitled/pages/registration.dart';
 import 'package:untitled/pages/menu.dart';
-import 'package:untitled/pages/habits.dart';
+import 'package:untitled/pages/lists_items.dart';
 import 'package:untitled/pages/profile.dart';
 
 Future<void> main() async {
@@ -24,7 +23,7 @@ Future<void> main() async {
         '/menu': (context) => Menu(),
         '/hab': (context) => ListHabits(),
         '/prof': (context) => Profile1(),
-        '/ready': (context) => ListCategory()
+
       },
     )
   );

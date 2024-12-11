@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/services/habits_class.dart';
-import 'package:untitled/pages/add_habit_pages.dart';
+import 'package:untitled/pages/add_new_item.dart';
 
 
 import '../services/my_text.dart';

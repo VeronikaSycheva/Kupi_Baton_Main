@@ -28,7 +28,7 @@ Text aboutText(String text){
   return Text(
     text,
     style: TextStyle(
-        fontSize: 17,
+        fontSize: 27,
         color: Color.fromARGB(255, 13, 12, 54),
         fontWeight: FontWeight.w400
     ),

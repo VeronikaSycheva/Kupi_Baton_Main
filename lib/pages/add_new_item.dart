@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/services/my_button.dart';
 import 'package:untitled/services/my_text.dart';
 
-import '../services/add_habit.dart';
+import '../services/add_item.dart';
 
 class AddMyHabit extends StatefulWidget {
 
@@ -32,7 +32,7 @@ class _AddMyHabitState extends State<AddMyHabit> {
         title: MyText(text: 'New item', isTitle: true, isDark: true),
       ),
         body: Padding(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -47,10 +47,6 @@ class _AddMyHabitState extends State<AddMyHabit> {
                 },
               ),
               Padding(padding: EdgeInsets.only(top: 30)),
-
-              Padding(padding: EdgeInsets.only(top: 30)),
-              Padding(padding: EdgeInsets.only(top: 20)),
-              Padding(padding: EdgeInsets.only(top: 50)),
               MyButton(
                 textButton: 'Add',
                 onTap: () {

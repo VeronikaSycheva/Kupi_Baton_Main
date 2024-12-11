@@ -17,7 +17,6 @@ class _classHabit extends State<classHabit> {
   bool ab = true;
   String state1;
   String state2;
-  String about = '';
   String name = '';
   final currentUser = FirebaseAuth.instance.currentUser!;
 
