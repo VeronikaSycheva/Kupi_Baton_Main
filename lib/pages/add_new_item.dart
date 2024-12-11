@@ -27,10 +27,19 @@ class _AddMyHabitState extends State<AddMyHabit> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      appBar: AppBar(
-        toolbarHeight: 100,
-        title: MyText(text: 'New item', isTitle: true, isDark: true),
-      ),
+        appBar: AppBar(
+          toolbarHeight: 100,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              MyText(
+                text: 'New item',
+                isTitle: true,
+                isDark: true,
+              ),
+            ],
+          ),
+        ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Column(

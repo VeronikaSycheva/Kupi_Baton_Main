@@ -16,7 +16,7 @@ class Menu extends StatelessWidget {
           Container(
             width: 40,
             height: 40,
-            child: Image.asset('assets/right.png')
+            child: Image.asset('assets/menu.png')
           )
         ]
     ),
@@ -38,7 +38,7 @@ class Menu extends StatelessWidget {
             ),
             Container(
               child: MyText(text: ' Kupi baton', isTitle: true, isDark: true),
-              height: 50,
+              height: 70,
             )
           ],)
         ),

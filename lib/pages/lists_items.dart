@@ -32,7 +32,7 @@ class _ListHabitsState extends State<ListHabits> {
       appBar: AppBar(
         title: MyText(text: 'Shopping list', isTitle: true, isDark: true),
       ),
-        backgroundColor: Color.fromARGB(255, 205, 189, 217),
+        backgroundColor: Colors.white,
         body: StreamBuilder(
             stream: FirebaseFirestore.instance.collection('Habits').snapshots(),
             builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -92,7 +92,7 @@ class _ListHabitsState extends State<ListHabits> {
             return AddMyHabit(habitsList: habitsList);
           });
         },
-          child: Icon(Icons.add, color: Colors.white,),
+          child: Icon(Icons.add, color: Colors.white, size: 40),
           backgroundColor: Color.fromARGB(255, 53, 29, 71)
       ),
     );
