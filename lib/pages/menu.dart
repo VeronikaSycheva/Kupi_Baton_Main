@@ -38,7 +38,7 @@ class Menu extends StatelessWidget {
             ),
             Container(
               child: MyText(text: ' Kupi baton', isTitle: true, isDark: true),
-              height: 30,
+              height: 50,
             )
           ],)
         ),

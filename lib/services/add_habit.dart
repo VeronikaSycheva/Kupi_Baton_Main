@@ -6,7 +6,6 @@ void addHabit(String name, about){
   FirebaseFirestore.instance.collection('Habits');
   Map<String, String> dataToSend = {
     'name': name,
-    'about': about,
     'user': FirebaseAuth.instance.currentUser!.uid,
   };
   habit_ref.doc().set(dataToSend);

@@ -28,15 +28,16 @@ class _AddMyHabitState extends State<AddMyHabit> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: MyText(text: 'Привычка', isTitle: true, isDark: true),
+        toolbarHeight: 40,
+        title: MyText(text: 'New item', isTitle: true, isDark: true),
       ),
         body: Padding(
-          padding: EdgeInsets.all(17),
+          padding: EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               MyText(
-                text: 'Название',
+                text: 'Title',
                 isTitle: false,
                 isDark: true
               ),
@@ -46,21 +47,12 @@ class _AddMyHabitState extends State<AddMyHabit> {
                 },
               ),
               Padding(padding: EdgeInsets.only(top: 30)),
-              MyText(
-                  text: 'Описание',
-                  isTitle: false,
-                  isDark: true
-              ),
-              TextField(
-                onChanged: (String value) {
-                  about_hab=value;
-                },
-              ),
+
               Padding(padding: EdgeInsets.only(top: 30)),
               Padding(padding: EdgeInsets.only(top: 20)),
               Padding(padding: EdgeInsets.only(top: 50)),
               MyButton(
-                textButton: 'Добавить привычку',
+                textButton: 'Add',
                 onTap: () {
                   addHabit(name_hab, about_hab);
                   Navigator.of(context).pop();
