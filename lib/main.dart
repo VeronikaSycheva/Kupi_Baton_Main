@@ -22,7 +22,7 @@ Future<void> main() async {
         '/': (context) => AuthPage(),
         '/reg': (context) => Reg(),
         '/menu': (context) => Menu(),
-        '/hab': (context) => ListHabits(),
+        '/hab': (context) => ListOfItems(),
         '/prof': (context) => Profile1(),
 
       },
@@ -44,30 +44,28 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   void initState() {
     super.initState();
 
-    // Настройка анимации вращения
+
     _controller = AnimationController(
-      duration: Duration(seconds: 2),  // Продолжительность анимации
+      duration: Duration(seconds: 2),
       vsync: this,
     );
 
-    // Создание анимации вращения
+
     _animation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
       parent: _controller,
-      curve: Curves.linear,  // Линейное вращение
+      curve: Curves.linear,
     ));
 
-    // Запуск анимации
-    _controller.repeat();  // Повторять вращение бесконечно
 
-    // Переход на основной экран через 3 секунды
+    _controller.repeat();
     Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/reg');
+      Navigator.pushReplacementNamed(context, '/');
     });
   }
 
   @override
   void dispose() {
-    _controller.dispose();  // Освобождение ресурсов
+    _controller.dispose();
     super.dispose();
   }
 
@@ -81,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
           child: Image.asset('assets/bread-2.png'),
           builder: (context, child) {
             return Transform.rotate(
-              angle: _animation.value * 6.3,  // 2π (360 градусов) - полный оборот
+              angle: _animation.value * 31.5,
               child: child,
             );
           },

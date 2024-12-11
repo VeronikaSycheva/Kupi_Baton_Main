@@ -126,7 +126,7 @@ class _Reg extends State<Reg> {
                               }
                             }
                         ),
-                        Expanded(child: Image.asset('assets/anime-girl.jpg'))
+                        Expanded(child: Image.asset('assets/first.png'))
                       ],
                     ),
                   ),

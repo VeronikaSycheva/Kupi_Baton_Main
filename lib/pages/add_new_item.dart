@@ -4,23 +4,23 @@ import 'package:untitled/services/my_text.dart';
 
 import '../services/add_item.dart';
 
-class AddMyHabit extends StatefulWidget {
+class AddNewItem extends StatefulWidget {
 
-  final List habitsList;
+  final List itemsList;
 
-  const AddMyHabit({super.key, required this.habitsList});
+  const AddNewItem({super.key, required this.itemsList});
 
   @override
-  State<AddMyHabit> createState() => _AddMyHabitState();
+  State<AddNewItem> createState() => _AddNewItemState();
 }
 
-class _AddMyHabitState extends State<AddMyHabit> {
-  List habitsList = [];
-  late String name_hab;
+class _AddNewItemState extends State<AddNewItem> {
+  List itemsList = [];
+  late String name_item;
   late String about_hab;
 
-  List getListHabits(){
-    return habitsList;
+  List getListOfItems(){
+    return itemsList;
   }
 
   @override
@@ -35,7 +35,7 @@ class _AddMyHabitState extends State<AddMyHabit> {
               MyText(
                 text: 'New item',
                 isTitle: true,
-                isDark: true,
+                isDeep: true,
               ),
             ],
           ),
@@ -48,12 +48,12 @@ class _AddMyHabitState extends State<AddMyHabit> {
               MyText(
                 text: 'Title',
                 isTitle: false,
-                isDark: true
+                isDeep: true
               ),
               SizedBox(height: 10),
               TextField(
                 onChanged: (String value) {
-                  name_hab=value;
+                  name_item=value;
                 },
                 decoration: InputDecoration(
                   hintText: 'Enter here',
@@ -67,7 +67,7 @@ class _AddMyHabitState extends State<AddMyHabit> {
               MyButton(
                 textButton: 'Add',
                 onTap: () {
-                  addHabit(name_hab, about_hab);
+                  addItem(name_item, about_hab);
                   Navigator.of(context).pop();
                 })
             ],

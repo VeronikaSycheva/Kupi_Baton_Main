@@ -31,7 +31,7 @@ class _Profile extends State<Profile1>{
     return Scaffold(
       resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: MyText(text: 'Profile', isTitle: true, isDark: true)
+          title: MyText(text: 'Profile', isTitle: true, isDeep: true)
         ),
         body: StreamBuilder(
           stream: snapshot,
@@ -47,11 +47,11 @@ class _Profile extends State<Profile1>{
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          MyText(text: 'Information ', isTitle: false, isDark: true),
+                          MyText(text: 'Information ', isTitle: false, isDeep: true),
                           Text(snapshot.data!.docs[index].get('username')),
                           Text(snapshot.data!.docs[index].get('email')),
                           Padding(padding: EdgeInsets.only(top: 25)),
-                          MyText(text: 'About me:', isTitle: false, isDark: true),
+                          MyText(text: 'About me:', isTitle: false, isDeep: true),
                           Container(
                             child: Row(
                               children: <Widget>[
@@ -82,14 +82,14 @@ class _Profile extends State<Profile1>{
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        MyText(text: 'Name:', isTitle: false, isDark: true),
+                                        MyText(text: 'Name:', isTitle: false, isDeep: true),
                                         TextField(
                                           onChanged: (String value) {
                                             username = value;
                                           },
                                         ),
                                         Padding(padding: EdgeInsets.only(top: 30)),
-                                        MyText(text: 'About me: ', isTitle: false, isDark: true),
+                                        MyText(text: 'About me: ', isTitle: false, isDeep: true),
                                         TextField(
                                           onChanged: (String value) {
                                             about_me = value;

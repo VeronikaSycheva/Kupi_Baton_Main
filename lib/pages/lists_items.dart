@@ -7,22 +7,26 @@ import 'package:untitled/pages/add_new_item.dart';
 
 import '../services/my_text.dart';
 
-class ListHabits extends StatefulWidget {
-  const ListHabits({super.key});
+class ListOfItems extends StatefulWidget {
+  const ListOfItems({super.key});
 
   @override
-  State<ListHabits> createState() => _ListHabitsState();
+  State<ListOfItems> createState() => _ShopListState();
 }
 
-class _ListHabitsState extends State<ListHabits> {
-
-  List habitsList = [];
+class _ShopListState extends State<ListOfItems> {
+  double _opacity = 1.0;
+  List ShopLists = [];
 
   @override
   void initState() {
     super.initState();
-
-    habitsList.addAll([]);
+    ShopLists.addAll([]);
+    Future.delayed(Duration(seconds: 2), () {
+      setState(() {
+        _opacity = 0.0;
+      });
+    });
   }
 
   @override
@@ -30,13 +34,30 @@ class _ListHabitsState extends State<ListHabits> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: MyText(text: 'Shopping list', isTitle: true, isDark: true),
+        title: MyText(text: 'Shopping list', isTitle: true, isDeep: true),
       ),
         backgroundColor: Colors.white,
         body: StreamBuilder(
             stream: FirebaseFirestore.instance.collection('Habits').snapshots(),
             builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-              if(!snapshot.hasData) return Text('No items yet');
+              if(!snapshot.hasData) return Center(
+                  child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                      Text('No items yet', textAlign: TextAlign.center,style: TextStyle(
+                fontSize: 24,)),
+              SizedBox(width: 20),//
+              AnimatedOpacity(
+              opacity: _opacity,  //
+              duration: Duration(seconds: 2),
+              child: Image.asset(
+              'assets/second.png',  // ADD PIC
+              width: 40,
+              height: 40,)
+                ,)
+                        ,]
+                    ,)
+                ,);
               return Padding(
                   padding: EdgeInsets.all(30),
                   child: ListView.builder(
@@ -61,7 +82,7 @@ class _ListHabitsState extends State<ListHabits> {
                                 background: Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Text('Delite  ',
+                                    Text('Delete  ',
                                         style: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 15
@@ -86,15 +107,20 @@ class _ListHabitsState extends State<ListHabits> {
               );
             }
         ),
-        floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(context: context, builder: (BuildContext context) {
-            return AddMyHabit(habitsList: habitsList);
-          });
-        },
-          child: Icon(Icons.add, color: Colors.white, size: 40),
-          backgroundColor: Color.fromARGB(255, 53, 29, 71)
-      ),
+
+          floatingActionButton: Container(
+            width: 80,
+            height: 80,
+            child : FloatingActionButton(
+          onPressed: () {
+            showDialog(context: context, builder: (BuildContext context) {
+              return AddNewItem(itemsList: ShopLists);
+            });
+          },
+
+            child: Icon(Icons.add, color: Colors.white, size: 40),
+            backgroundColor: Color.fromARGB(255, 53, 29, 71)
+        ),)
     );
   }
 }

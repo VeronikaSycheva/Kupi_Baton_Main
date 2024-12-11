@@ -12,7 +12,7 @@ class Menu extends StatelessWidget {
     }, child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          MyText(text: textOn, isTitle: false, isDark: true),
+          MyText(text: textOn, isTitle: false, isDeep: true),
           Container(
             width: 40,
             height: 40,
@@ -37,7 +37,7 @@ class Menu extends StatelessWidget {
               height: 64,
             ),
             Container(
-              child: MyText(text: ' Kupi baton', isTitle: true, isDark: true),
+              child: MyText(text: ' Kupi baton', isTitle: true, isDeep: true),
               height: 70,
             )
           ],)

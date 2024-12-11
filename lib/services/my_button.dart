@@ -26,7 +26,7 @@ class MyButton extends StatelessWidget {
             child: MyText(
               text: textButton,
               isTitle: false,
-              isDark: false,
+              isDeep: false,
             )
           )
       )

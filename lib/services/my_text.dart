@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class MyText extends StatelessWidget {
   final String text;
   final bool isTitle;
-  final bool isDark;
+  final bool isDeep;
   const MyText({
     super.key,
     required this.text,
     required this.isTitle,
-    required this.isDark
+    required this.isDeep
   });
 
   @override
@@ -17,7 +17,7 @@ class MyText extends StatelessWidget {
       text,
       style: TextStyle(
         fontSize: isTitle? 50 : 30,
-        color: isDark? Color.fromARGB(255, 53, 29, 71) : Color.fromARGB(255, 205, 189, 217),
+        color: isDeep? Color.fromARGB(255, 53, 29, 71) : Color.fromARGB(255, 205, 189, 217),
         fontWeight: FontWeight.w600
       ),
     );
