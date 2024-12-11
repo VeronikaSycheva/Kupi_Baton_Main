@@ -88,6 +88,14 @@ flutter:
     - assets/animal2.png
     - assets/animal3.png
     - assets/right.png
+    - assets/tick.png
+    - assets/rubbishbin.png
+    - assets/pencil.png
+    - assets/listing.png
+    - assets/menu.png
+    - assets/human.png
+    - assets/gear.png
+    - assets/anime-girl.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
