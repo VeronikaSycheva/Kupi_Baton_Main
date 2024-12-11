@@ -16,7 +16,7 @@ class MyText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: isTitle? 40 : 20,
+        fontSize: isTitle? 50 : 30,
         color: isDark? Color.fromARGB(255, 53, 29, 71) : Color.fromARGB(255, 205, 189, 217),
         fontWeight: FontWeight.w600
       ),

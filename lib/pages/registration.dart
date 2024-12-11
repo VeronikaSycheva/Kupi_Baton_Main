@@ -58,13 +58,13 @@ class _Reg extends State<Reg> {
                     padding: EdgeInsets.all(17),
                     child:Column(
                       children: [
-                        Text('Email', style: TextStyle(fontSize: 20),),
+                        Text('Email', style: TextStyle(fontSize: 30),),
                         TextField(
                           onChanged: (String value) {
                             emailC = value;
                           },
                         ),
-                        Text('Password', style: TextStyle(fontSize: 20)),
+                        Text('Password', style: TextStyle(fontSize: 30)),
                         TextField(
                           obscureText: true,
                           onChanged: (String value) {
@@ -82,7 +82,25 @@ class _Reg extends State<Reg> {
                                 );
                               } on FirebaseAuthException catch (e) {
                                   if (e.code == 'user-not-found') {
-                                    print('No user found');
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AnimatedOpacity(
+                                              opacity: 1.0,
+                                              duration: Duration(seconds: 3),
+                                              child: AlertDialog(
+                                                  backgroundColor: Color.fromARGB(60, 53, 29, 71),
+                                                  title: Text(
+                                                    'User not found',
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 50,
+                                                      fontWeight: FontWeight.bold,
+                                                    ),)
+                                              )
+                                          );
+                                        }
+                                    );
                                   }
                                   else if (e.code == 'wrong-password'){
                                       showDialog(
@@ -90,14 +108,14 @@ class _Reg extends State<Reg> {
                                           builder: (context) {
                                             return AnimatedOpacity(
                                                 opacity: 1.0,
-                                                duration: Duration(seconds: 1),
+                                                duration: Duration(seconds: 3),
                                             child: AlertDialog(
-                                            backgroundColor: Color.fromARGB(30, 53, 29, 71),
+                                            backgroundColor: Color.fromARGB(60, 53, 29, 71),
                                             title: Text(
                                             'Wrong password or Email',
                                             style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 18,
+                                            fontSize: 50,
                                             fontWeight: FontWeight.bold,
                                             ),)
                                             )

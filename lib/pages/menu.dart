@@ -33,8 +33,8 @@ class Menu extends StatelessWidget {
           title: Row(children: [
             Container(
               child: Image.asset('assets/bread.png'),
-              width: 40,
-              height: 40,
+              width: 64,
+              height: 64,
             ),
             Container(
               child: MyText(text: ' Kupi baton', isTitle: true, isDark: true),

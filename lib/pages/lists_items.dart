@@ -30,13 +30,13 @@ class _ListHabitsState extends State<ListHabits> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: MyText(text: 'Привычки', isTitle: true, isDark: true),
+        title: MyText(text: 'Shopping list', isTitle: true, isDark: true),
       ),
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 205, 189, 217),
         body: StreamBuilder(
             stream: FirebaseFirestore.instance.collection('Habits').snapshots(),
             builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-              if(!snapshot.hasData) return Text('У вас нет добавленных привычек');
+              if(!snapshot.hasData) return Text('No items yet');
               return Padding(
                   padding: EdgeInsets.all(30),
                   child: ListView.builder(
@@ -61,13 +61,20 @@ class _ListHabitsState extends State<ListHabits> {
                                 background: Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Text('Удалить  ',
+                                    Text('Delite  ',
                                         style: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 15
                                         )
                                     ),
-                                    Icon(Icons.dangerous,color: Colors.grey,),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                                      child: Image.asset(
+                                        'assets/rubbishbin.png',
+                                        width: 15,
+                                        height: 15,
+                                      ),
+                                    ),
                                     Padding(padding: EdgeInsets.only(left: 20))
                                   ],
                                 ),
@@ -86,7 +93,7 @@ class _ListHabitsState extends State<ListHabits> {
           });
         },
           child: Icon(Icons.add, color: Colors.white,),
-          backgroundColor: Color.fromARGB(255, 13, 12, 54)
+          backgroundColor: Color.fromARGB(255, 53, 29, 71)
       ),
     );
   }

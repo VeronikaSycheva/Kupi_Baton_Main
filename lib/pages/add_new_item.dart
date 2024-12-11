@@ -26,13 +26,13 @@ class _AddMyHabitState extends State<AddMyHabit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        toolbarHeight: 40,
+        toolbarHeight: 100,
         title: MyText(text: 'New item', isTitle: true, isDark: true),
       ),
         body: Padding(
-          padding: EdgeInsets.all(30),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -41,10 +41,18 @@ class _AddMyHabitState extends State<AddMyHabit> {
                 isTitle: false,
                 isDark: true
               ),
+              SizedBox(height: 10),
               TextField(
                 onChanged: (String value) {
                   name_hab=value;
                 },
+                decoration: InputDecoration(
+                  hintText: 'Enter here',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                  contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                ),
               ),
               Padding(padding: EdgeInsets.only(top: 30)),
               MyButton(
